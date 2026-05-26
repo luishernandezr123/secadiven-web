@@ -89,6 +89,8 @@
   function injectFooter() {
     var footer = document.getElementById('site-footer');
     if (!footer) return;
+    var isSubpage = window.location.pathname !== '/' && !window.location.pathname.endsWith('index.html');
+    var basePath = isSubpage ? '/' : '';
     var y = new Date().getFullYear();
     var html = '<div class="container"><div class="footer-grid">';
     html += '<div class="footer-brand"><h3>Seminario Teológico<br>Secadiven Internacional</h3><p>Formación teológica con más de 40 años de trayectoria. "Sin Revelación no hay Teología."</p></div>';

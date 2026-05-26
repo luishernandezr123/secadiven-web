@@ -1,0 +1,41 @@
+{
+  "programas": [
+    {
+      "id": "tsu-teologia",
+      "titulo": "T.S.U. en Teologia",
+      "descripcion": "Formacion inicial con mencion en Bibliologia y Consejeria. 20 materias que abarcan introduccion a la teologia, psicologia, exegesis, apologetica, filosofia, escatologia, capellania e idiomas biblicos.",
+      "modalidad": "Presencial",
+      "duracion": "3 semestres - 60 U.C.",
+      "destacado": true,
+      "nivel": "Pregrado"
+    },
+    {
+      "id": "lic-teologia",
+      "titulo": "Licenciatura en Teologia",
+      "descripcion": "Profundizacion con mencion en Bibliologia y Consejeria. 24 materias incluyendo corrientes teologicas contemporaneas, cristologias del NT, arqueologia, neuropsicologia, griego y hebreo exegetico.",
+      "modalidad": "Presencial",
+      "duracion": "3 semestres - 96 U.C.",
+      "destacado": true,
+      "nivel": "Pregrado"
+    },
+    {
+      "id": "maestria-teologia",
+      "titulo": "Maestria en Teologia",
+      "descripcion": "Especializacion en Ciencias Religiosas y Consejeria Familiar. 20 materias con enfasis en consejeria, terapia familiar, intervencion en crisis, psicoterapia de grupo, psicometria y proyecto comunitario.",
+      "modalidad": "Semipresencial",
+      "duracion": "4 semestres - 60 U.C.",
+      "destacado": true,
+      "nivel": "Postgrado"
+    },
+    {
+      "id": "doctorado-teologia",
+      "titulo": "Doctorado en Teologia",
+      "descripcion": "Maximo nivel academico en Ciencias Religiosas y Consejeria. 19 materias trimestrales con posmodernismo, bioetica, lenguas semiticas e indoeuropeas avanzadas, exegesis rabinica y diseno de centros de consejeria.",
+      "modalidad": "Presencial",
+      "duracion": "4 trimestres - 60 U.C.",
+      "destacado": true,
+      "nivel": "Doctorado"
+    }
+  ]
+}
+

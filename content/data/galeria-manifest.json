@@ -1,0 +1,13 @@
+{
+  "images": [
+    { "src": "assets/images/gallery/01-campus.jpg", "caption": "Entrada principal del seminario" },
+    { "src": "assets/images/gallery/02-auditorio.jpg", "caption": "Auditorio principal" },
+    { "src": "assets/images/gallery/03-biblioteca.jpg", "caption": "Biblioteca teológica" },
+    { "src": "assets/images/gallery/04-capilla.jpg", "caption": "Capilla del seminario" },
+    { "src": "assets/images/gallery/05-aulas.jpg", "caption": "Aulas de estudio" },
+    { "src": "assets/images/gallery/06-graduacion.jpg", "caption": "Ceremonia de graduación" },
+    { "src": "assets/images/gallery/07-eventos.jpg", "caption": "Evento especial" },
+    { "src": "assets/images/gallery/08-comunidad.jpg", "caption": "Vida en comunidad" },
+    { "src": "assets/images/gallery/09-deportes.jpg", "caption": "Actividades recreativas" }
+  ]
+}

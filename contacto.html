@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta al Seminario Teológico Secadiven Internacional. WhatsApp, formulario de contacto, teléfono y redes sociales.">
+  <meta property="og:title" content="Contacto - Seminario Teológico Secadiven Internacional">
+  <meta property="og:description" content="Contáctanos por WhatsApp, formulario o teléfono.">
+  <title>Contacto - Seminario Teológico Secadiven Internacional</title>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap#38;family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap#38;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <header class="site-header" id="site-header" role="banner"></header>
+
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <h1>Contáctanos</h1>
+        <p>Estamos aquí para atenderte. Escríbenos, llámanos o visítanos.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start">
+          <!-- Contact form -->
+          <div>
+            <h2>Envíanos un mensaje</h2>
+            <p style="color:var(--color-text-light);margin-bottom:2rem">Completa el formulario y te responderemos a la brevedad.</p>
+
+            <form id="contact-form" action="https://formspree.io/f/{FORM_ID}" method="POST">
+              <div class="form-group" id="group-nombre">
+                <label for="nombre">Nombre completo <span style="color:var(--color-error)">*</span></label>
+                <input type="text" id="nombre" name="nombre" required minlength="2" maxlength="100" placeholder="Tu nombre">
+                <span class="error-msg">Ingresa tu nombre (mínimo 2 caracteres).</span>
+              </div>
+              <div class="form-group" id="group-email">
+                <label for="email">Correo electrónico <span style="color:var(--color-error)">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                <span class="error-msg">Ingresa un correo electrónico válido.</span>
+              </div>
+              <div class="form-group" id="group-telefono">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+58 412-0000000">
+              </div>
+              <div class="form-group" id="group-asunto">
+                <label for="asunto">Asunto <span style="color:var(--color-error)">*</span></label>
+                <input type="text" id="asunto" name="asunto" required minlength="5" maxlength="200" placeholder="Información sobre...">
+                <span class="error-msg">Ingresa un asunto (mínimo 5 caracteres).</span>
+              </div>
+              <div class="form-group" id="group-mensaje">
+                <label for="mensaje">Mensaje <span style="color:var(--color-error)">*</span></label>
+                <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="2000" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <span class="error-msg">Ingresa tu mensaje (mínimo 10 caracteres).</span>
+              </div>
+              <button type="submit" class="btn btn-primary" id="submit-btn" style="width:100%">
+                Enviar mensaje
+              </button>
+              <div id="form-feedback" style="display:none"></div>
+            </form>
+          </div>
+
+          <!-- Contact info -->
+          <div>
+            <h2>Información de contacto</h2>
+            <p style="color:var(--color-text-light);margin-bottom:2rem">También puedes contactarnos directamente por estos medios.</p>
+
+            <div class="card" style="margin-bottom:1.5rem">
+              <h3 style="display:flex;align-items:center;gap:0.75rem">
+                <span style="font-size:1.5rem">&#9993;</span> Correo
+              </h3>
+              <a href="mailto:secadiven@gmail.com" style="font-size:1.05rem;word-break:break-all">secadiven@gmail.com</a>
+            </div>
+
+            <div class="card" style="margin-bottom:1.5rem">
+              <h3 style="display:flex;align-items:center;gap:0.75rem">
+                <span style="font-size:1.5rem">&#9742;</span> Teléfono
+              </h3>
+              <a href="tel:+584127759653" style="font-size:1.1rem">+58 412-7759653</a>
+            </div>
+
+            <div class="card" style="margin-bottom:1.5rem;background:var(--color-whatsapp);color:#fff">
+              <h3 style="display:flex;align-items:center;gap:0.75rem;color:#fff">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                WhatsApp
+              </h3>
+              <p style="opacity:0.9;margin-bottom:1rem">Respuesta rápida y directa</p>
+              <a href="https://wa.me/584127759653?text=Hola%2C+quisiera+informaci%C3%B3n+sobre+el+Seminario+Teol%C3%B3gico+Secadiven" target="_blank" rel="noopener" class="btn" style="background:#fff;color:#25d366">Chatear por WhatsApp</a>
+            </div>
+
+            <h3 style="margin:2rem 0 1rem">Redes Sociales</h3>
+            <div class="footer-social" style="justify-content:flex-start">
+              <a href="https://facebook.com/secadiven" target="_blank" rel="noopener" aria-label="Facebook" style="background:var(--color-bg-alt);width:48px;height:48px">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://instagram.com/secadiven" target="_blank" rel="noopener" aria-label="Instagram" style="background:var(--color-bg-alt);width:48px;height:48px">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--color-primary)"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+              </a>
+              <a href="https://youtube.com/@secadiven" target="_blank" rel="noopener" aria-label="YouTube" style="background:var(--color-bg-alt);width:48px;height:48px">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29.94 29.94 0 0 0 1 11.75a29.94 29.94 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29.94 29.94 0 0 0 .46-5.25 29.94 29.94 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 style="text-align:center">Nuestra Ubicación</h2>
+        <p style="text-align:center;color:var(--color-text-light);margin-bottom:2rem">Visítanos en nuestra sede</p>
+        <div class="map-container" id="map"></div>
+        <noscript>
+          <div style="text-align:center;padding:2rem">
+            <img src="https://via.placeholder.com/800x400/e2e8f0/1a365d?text=Seminario+Teologico+Secadiven" alt="Ubicación del seminario" style="max-width:100%;border-radius:var(--radius-md)">
+          </div>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer" role="contentinfo"></footer>
+  <a href="#" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"></a>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/assets/js/main.js?v=2.0"></script>
+  <script src="/assets/js/contacto.js?v=2.0"></script>
+</body>
+</html>

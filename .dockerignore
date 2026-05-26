@@ -1,0 +1,22 @@
+# Node modules (si existieran)
+node_modules/
+
+# Archivos de contexto/desarrollo
+CONTEXTO-ACADEMICO.md
+CONTEXTO-INSTITUCIONAL.md
+*.pdf
+*.py
+_gen_pages.py
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# OS
+.DS_Store
+Thumbs.db

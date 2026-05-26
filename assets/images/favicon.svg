@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="4" fill="#1a365d"/>
+  <text x="16" y="12" text-anchor="middle" font-family="Georgia,serif" font-weight="900" font-size="6" fill="#c5a028">ST</text>
+  <text x="16" y="22" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="5" fill="#ffffff">SI</text>
+</svg>

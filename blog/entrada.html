@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artículo del blog del Seminario Teológico Secadiven Internacional.">
+  <meta property="og:title" content="Blog - Seminario Teológico Secadiven Internacional">
+  <meta property="og:description" content="Artículo del blog del seminario.">
+  <title>Blog - Seminario Teológico Secadiven Internacional</title>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap#38;family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap#38;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=2.0">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <header class="site-header" id="site-header" role="banner"></header>
+
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <h1 id="post-title">Cargando...</h1>
+        <div class="blog-meta" id="post-meta" style="justify-content:center;color:rgba(255,255,255,0.8)"></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <article class="blog-single">
+          <div class="blog-content" id="post-content">
+            <p style="text-align:center;color:var(--color-text-light)">Cargando artículo...</p>
+          </div>
+          <div style="margin-top:3rem;text-align:center">
+            <a href="index.html" class="btn btn-outline">&larr; Volver al blog</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer" role="contentinfo"></footer>
+  <a href="#" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"></a>
+
+  <script src="/assets/js/main.js?v=2.0"></script>
+  <script src="/assets/js/blog.js?v=2.0"></script>
+  <script src="https://unpkg.com/marked@11.1.0/marked.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('post');
+      if (!slug) { showError('No se especific&oacute; ning&uacute;n art&iacute;culo.'); return; }
+
+      var postsMap = {
+        'bienvenida-nuevo-ciclo': '../content/blog/bienvenida-nuevo-ciclo.md',
+        'graduacion-2026': '../content/blog/graduacion-2026.md',
+        'conferencia-teologica': '../content/blog/conferencia-teologica.md'
+      };
+
+      var file = postsMap[slug];
+      if (!file) { showError('Art&iacute;culo no encontrado.'); return; }
+
+      fetch(file)
+        .then(function(r) { return r.text(); })
+        .then(function(text) {
+          var parsed = BlogUtils.parseFrontmatter(text);
+          var titleEl = document.getElementById('post-title');
+          var metaEl = document.getElementById('post-meta');
+          var contentEl = document.getElementById('post-content');
+          var pageTitle = document.querySelector('title');
+          var ogTitle = document.querySelector('meta[property="og:title"]');
+
+          var title = parsed.meta.titulo || 'Sin t&iacute;tulo';
+          var date = BlogUtils.formatDate(parsed.meta.fecha);
+          var author = parsed.meta.autor;
+
+          if (titleEl) titleEl.textContent = title;
+          if (pageTitle) pageTitle.textContent = title + ' - Seminario Teol&oacute;gico Secadiven';
+          if (ogTitle) ogTitle.setAttribute('content', title);
+
+          var metaHtml = '';
+          if (date) metaHtml += '<span>&#128197; ' + date + '</span>';
+          if (author) metaHtml += '<span>&#9998; ' + author + '</span>';
+          if (metaEl) metaEl.innerHTML = metaHtml;
+
+          if (contentEl) {
+            contentEl.innerHTML = '<div class="blog-content">' + BlogUtils.renderMarkdown(parsed.body) + '</div>';
+          }
+
+          /* Scroll to top */
+          window.scrollTo(0, 0);
+        })
+        .catch(function() {
+          showError('No se pudo cargar el art&iacute;culo. Intenta de nuevo m&aacute;s tarde.');
+        });
+
+      function showError(msg) {
+        var contentEl = document.getElementById('post-content');
+        if (contentEl) contentEl.innerHTML = '<div class="empty-state"><p>' + msg + '</p></div>';
+      }
+    });
+  </script>
+</body>
+</html>

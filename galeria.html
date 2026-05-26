@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería de fotos del Seminario Teológico Secadiven Internacional. Conoce nuestras instalaciones y actividades.">
+  <meta property="og:title" content="Galería - Seminario Teológico Secadiven Internacional">
+  <meta property="og:description" content="Fotos de nuestras instalaciones y actividades.">
+  <title>Galería - Seminario Teológico Secadiven Internacional</title>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap#38;family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap#38;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <header class="site-header" id="site-header" role="banner"></header>
+
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <h1>Galería</h1>
+        <p>Conoce nuestras instalaciones, eventos y vida en el seminario</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-grid" id="gallery-grid">
+          <p style="text-align:center;grid-column:1/-1;color:var(--color-text-light)">Cargando galería...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+    <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-prev" aria-label="Anterior">&lsaquo;</button>
+    <button class="lightbox-next" aria-label="Siguiente">&rsaquo;</button>
+    <img src="" alt="" id="lightbox-img">
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+  </div>
+
+  <footer class="site-footer" id="site-footer" role="contentinfo"></footer>
+  <a href="#" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"></a>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/galeria.js"></script>
+</body>
+</html>

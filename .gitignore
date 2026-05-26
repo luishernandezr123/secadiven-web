@@ -1,0 +1,6 @@
+*.pdf
+CONTEXTO-ACADEMICO.md
+CONTEXTO-INSTITUCIONAL.md
+*.py
+_gen_pages.py
+docker-compose.yml

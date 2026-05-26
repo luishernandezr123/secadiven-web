@@ -44,6 +44,9 @@
 @media (min-width: 481px) {
   :root { --header-height: 88px; }
 }
+@media (min-width: 768px) {
+  :root { --header-height: 104px; }
+}
 
 /* ===== Responsive Grid Utilities ===== */
 .two-col { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; }
@@ -125,10 +128,10 @@ img { max-width: 100%; height: auto; display: block; }
 .site-header.scrolled { box-shadow: var(--shadow-sm); border-bottom-color: var(--color-border); background: rgba(254,251,245,0.95); }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; height: 100%; }
 .logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
-.logo img { height: 72px; width: auto; flex-shrink: 0; transition: height 0.3s ease; }
-@media (min-width: 481px) { .logo img { height: 88px; } }
-@media (min-width: 768px) { .logo img { height: 100px; } }
-@media (max-width: 360px) { .logo img { height: 52px; } }
+.logo img { height: 60px; width: auto; flex-shrink: 0; transition: height 0.3s ease; }
+@media (min-width: 481px) { .logo img { height: 76px; } }
+@media (min-width: 768px) { .logo img { height: 88px; } }
+@media (max-width: 360px) { .logo img { height: 48px; } }
 
 /* Logo text - gold/bronze embossed */
 .logo-text {

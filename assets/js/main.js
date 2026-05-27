@@ -13,7 +13,8 @@
       { href: basePath + 'index.html#inicio', text: 'Inicio' },
       { href: basePath + 'nosotros.html', text: 'Nosotros' },
       { href: basePath + 'programas.html', text: 'Programas' },
-      { href: basePath + 'nucleos.html', text: 'Nucleos' },
+      { href: basePath + 'nucleos.html', text: 'Núcleos' },
+      { href: basePath + 'galeria.html', text: 'Galería' },
       { href: basePath + 'index.html#contacto', text: 'Contacto' }
     ];
 
@@ -94,7 +95,7 @@
     var y = new Date().getFullYear();
     var html = '<div class="container"><div class="footer-grid">';
     html += '<div class="footer-brand"><h3>Seminario Teológico<br>Secadiven Internacional</h3><p>Formación teológica con más de 40 años de trayectoria. "Sin Revelación no hay Teología."</p></div>';
-    html += '<div class="footer-col"><h4>Secciones</h4><a href="' + basePath + 'nosotros.html">Nosotros</a><a href="' + basePath + 'programas.html">Programas</a><a href="' + basePath + 'nucleos.html">Nucleos</a><a href="' + basePath + 'index.html#contacto">Contacto</a></div>';
+    html += '<div class="footer-col"><h4>Secciones</h4><a href="' + basePath + 'nosotros.html">Nosotros</a><a href="' + basePath + 'programas.html">Programas</a><a href="' + basePath + 'nucleos.html">Núcleos</a><a href="' + basePath + 'galeria.html">Galería</a><a href="' + basePath + 'index.html#contacto">Contacto</a></div>';
     html += '<div class="footer-col"><h4>Contacto</h4><a href="mailto:secadiven@gmail.com">secadiven@gmail.com</a><p style="color:rgba(255,255,255,0.5);font-size:0.85rem">Valencia, Carabobo<br>Venezuela</p></div>';
     html += '</div>';
     html += '<div class="footer-bottom"><span>&copy; ' + y + ' Seminario Teológico Secadiven Internacional</span><span class="footer-legal"><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></span></div></div>';

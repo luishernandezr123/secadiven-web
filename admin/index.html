@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin - Secadiven</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0b1322; color: #dbe2f8; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .login-box {
+      background: #141c2b; border: 1px solid #222a3a; border-radius: 12px;
+      padding: 3rem 2.5rem; width: 100%; max-width: 400px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .login-box h1 {
+      text-align: center; font-size: 1.5rem; margin-bottom: 0.5rem;
+      color: #e8c268;
+    }
+    .login-box p { text-align: center; color: #6b7280; font-size: 0.9rem; margin-bottom: 2rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 0.4rem; color: #b8c5d6; }
+    .form-group input {
+      width: 100%; padding: 0.75rem 1rem; border-radius: 6px;
+      background: #0b1322; border: 1px solid #2d3545; color: #dbe2f8;
+      font-size: 1rem; outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus { border-color: #c8a44e; }
+    .btn {
+      width: 100%; padding: 0.85rem; border: none; border-radius: 6px;
+      background: linear-gradient(135deg, #e8c268, #c8a44e);
+      color: #0b1322; font-size: 1rem; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; margin-top: 0.5rem;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(200,164,78,0.3); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .error { background: rgba(255,0,0,0.1); border: 1px solid rgba(255,0,0,0.2);
+      color: #ff6b6b; padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem;
+      font-size: 0.9rem; display: none; }
+    .error.show { display: block; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>🔐 Admin Panel</h1>
+    <p>Secadiven Internacional</p>
+    <div class="error" id="error"></div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn" id="submitBtn">Ingresar</button>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('loginForm');
+    const errorEl = document.getElementById('error');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Check if already logged in
+    const token = localStorage.getItem('admin_token');
+    if (token) {
+      fetch('/api/auth/check', { headers: { 'Authorization': 'Bearer ' + token } })
+        .then(r => r.ok ? (window.location = '/admin/dashboard.html') : localStorage.removeItem('admin_token'))
+        .catch(() => localStorage.removeItem('admin_token'));
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.remove('show');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Ingresando...';
+
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: document.getElementById('username').value,
+            password: document.getElementById('password').value
+          })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Error al iniciar sesión');
+        
+        localStorage.setItem('admin_token', data.token);
+        window.location = '/admin/dashboard.html';
+      } catch (err) {
+        errorEl.textContent = err.message;
+        errorEl.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Ingresar';
+      }
+    });
+  </script>
+</body>
+</html>
